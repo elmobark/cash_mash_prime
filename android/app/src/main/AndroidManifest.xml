@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fingtech.cash_mash_prime">
    <application
-        android:label="cash_mash_prime"
+        android:label="Prime"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

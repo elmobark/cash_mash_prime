@@ -2,21 +2,27 @@ name: cash_mash_prime
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=2.17.0 <3.0.0'
+environment:
+  sdk: ">=2.17.0 <3.0.0"
 
-dependencies: 
+dependencies:
+  animations: ^2.0.3
   cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.1.0
   get: 4.6.3
-  flutter: 
-    sdk: flutter
+  google_fonts: ^3.0.1
+  path_to_regexp: ^0.4.0
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^2.0.0
-  lints: 2.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
+  lints: 2.0.0
 
-flutter: 
+flutter:
   uses-material-design: true
-
+  assets:
+    - assets/images/
+    - assets/icons/

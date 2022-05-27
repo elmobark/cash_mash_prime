@@ -131,10 +131,15 @@ class PathStackState extends State<PathStack> with TickerProviderStateMixin {
 
   bool checkPathMatchesRoute(String path, List<String> routes) {
     final bool allowSuffix = routes[0].endsWith('/') && routes[0] != '/';
+ 
     for (var i = 0; i < routes.length; i++) {
       final regExp = pathToRegExp('$basePath${routes[i]}',
           prefix: allowSuffix, caseSensitive: widget.caseSensitive);
-      if (regExp.hasMatch(path)) return true;
+
+      if (regExp.hasMatch(path)) {
+ 
+        return true;
+      }
     }
     return false;
   }

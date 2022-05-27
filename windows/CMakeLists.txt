@@ -4,7 +4,7 @@ project(cash_mash_prime LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "cash_mash_prime")
+set(BINARY_NAME "Prime")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

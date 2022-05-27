@@ -7,13 +7,20 @@ environment:
 
 dependencies:
   animations: ^2.0.3
+  bubble: ^1.2.1
+  cached_network_image: ^3.2.1
   cupertino_icons: ^1.0.2
+  dio: ^4.0.6
   flutter:
     sdk: flutter
+  flutter_credit_card: ^3.0.1
   flutter_svg: ^1.1.0
   get: 4.6.3
   google_fonts: ^3.0.1
+  local_hero: ^0.2.0
   path_to_regexp: ^0.4.0
+  pinput: ^2.2.9
+  slide_countdown: ^0.2.4
 
 dev_dependencies:
   flutter_lints: ^2.0.0

@@ -7,9 +7,6 @@ import '../controllers/auth_controller.dart';
 class AuthView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      body: controller.buildPanel()
-    );
+    return Scaffold(body: controller.buildPanel());
   }
 }

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:cash_mash_prime/app/components/buttons/white_button.dart';
 import 'package:cash_mash_prime/app/helpers/app_colors.dart';
 import 'package:cash_mash_prime/app/helpers/app_styles.dart';
+import 'package:cash_mash_prime/app/helpers/toast.dart';
 import 'package:cash_mash_prime/app/modules/auth/controllers/signupcontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,6 +16,7 @@ class OTPSignUp extends GetView<SignUpController> {
 
   @override
   Widget build(BuildContext context) {
+    String otp = '';
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column(
@@ -34,6 +36,9 @@ class OTPSignUp extends GetView<SignUpController> {
           Center(
             child: Pinput(
               length: 6,
+              onChanged: (value) {
+                otp = value;
+              },
               pinAnimationType: PinAnimationType.slide,
               defaultPinTheme: PinTheme(
                 width: Get.width,
@@ -81,6 +86,10 @@ class OTPSignUp extends GetView<SignUpController> {
           Spacer(),
           WhiteButton(
               onPressed: () {
+                if (otp != '123456') {
+                  ToastHelper.errorSnack(message: 'الرمز غير صحيح');
+                  return;
+                }
                 Get.find<SignUpController>().handleNext();
               },
               title: 'NEXT'),

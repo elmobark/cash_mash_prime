@@ -5,6 +5,7 @@ import 'package:cash_mash_prime/app/helpers/app_styles.dart';
 import 'package:cash_mash_prime/app/modules/auth/controllers/auth_controller.dart';
 import 'package:cash_mash_prime/app/modules/auth/views/lock_view.dart';
 import 'package:cash_mash_prime/app/modules/auth/views/login_view.dart';
+import 'package:cash_mash_prime/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -38,6 +39,9 @@ class PhoneView extends GetView<AuthController> {
                   ),
                   TextFormField(
                     keyboardType: TextInputType.phone,
+                    onFieldSubmitted: (v) {
+                      Get.offAndToNamed(Routes.HOME);
+                    },
                     decoration: AppDecorations.preLoginDecoration(
                       'Phone number',
                     ),

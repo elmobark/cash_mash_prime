@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cash_mash_prime/app/helpers/app_colors.dart';
 import 'package:cash_mash_prime/app/helpers/app_styles.dart';
@@ -9,6 +7,7 @@ import 'package:cash_mash_prime/app/modules/home/views/pages/landing.dart';
 import 'package:cash_mash_prime/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:local_hero/local_hero.dart';
 
 class ChatHomePage extends GetView<HomeChatController> {
   static final String path = '/chat';
@@ -30,11 +29,14 @@ class ChatHomePage extends GetView<HomeChatController> {
                 children: [
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: CircleAvatar(
-                      backgroundImage: CachedNetworkImageProvider(
-                        'https://pbs.twimg.com/profile_images/1502550846067814403/S4vd4uIH_400x400.jpg',
+                    child: LocalHero(
+                      tag: 'userprofile',
+                      child: CircleAvatar(
+                        backgroundImage: CachedNetworkImageProvider(
+                          'https://pbs.twimg.com/profile_images/1502550846067814403/S4vd4uIH_400x400.jpg',
+                        ),
+                        radius: 19,
                       ),
-                      radius: 19,
                     ),
                   ),
                   Align(
@@ -86,14 +88,15 @@ class ChatHomePage extends GetView<HomeChatController> {
                             color: Colors.white,
                             child: Row(children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 13),
                                 child: Hero(
                                   tag: 'user_${controller.users[index]["id"]}',
                                   child: CircleAvatar(
                                     backgroundImage: CachedNetworkImageProvider(
                                       controller.users[index]['picture'],
                                     ),
-                                    radius: 19,
+                                    radius: 25,
                                   ),
                                 ),
                               ),
@@ -104,6 +107,9 @@ class ChatHomePage extends GetView<HomeChatController> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
+                                      SizedBox(
+                                        height: 7,
+                                      ),
                                       Text(
                                         '${controller.users[index]["firstName"]} ${controller.users[index]["lastName"]}',
                                         style: TextStyle(
@@ -111,13 +117,19 @@ class ChatHomePage extends GetView<HomeChatController> {
                                             fontWeight: FontWeight.bold,
                                             fontSize: 15),
                                       ),
+                                      SizedBox(
+                                        height: 7,
+                                      ),
                                       Text(
                                         'Hi Ali , this is ${controller.users[index]["title"]} ${controller.users[index]["firstName"]} this is my Prime id ${controller.users[index]["id"]}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontWeight: FontWeight.normal,
                                             fontSize: 12),
-                                      )
+                                      ),
+                                      SizedBox(
+                                        height: 7,
+                                      ),
                                     ],
                                   ),
                                 ),

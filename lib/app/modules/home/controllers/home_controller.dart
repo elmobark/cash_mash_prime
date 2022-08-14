@@ -30,7 +30,7 @@ class HomeController extends GetxController {
             return SharedAxisTransition(
                 animation: primaryAnimation,
                 secondaryAnimation: secondaryAnimation,
-                fillColor: Theme.of(context).scaffoldBackgroundColor,
+                fillColor: AppColors.blueish,
                 transitionType: SharedAxisTransitionType.horizontal,
                 child: child);
           },

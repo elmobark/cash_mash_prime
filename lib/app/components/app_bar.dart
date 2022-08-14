@@ -8,22 +8,25 @@ class PrimeBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Text(
-            'CashMash ',
-            style: TextStyle(
-                color: AppColors.darkBlue,
-                fontWeight: FontWeight.bold,
-                fontSize: 27),
-          ),
-          Text(
-            'Prime',
-            style: TextStyle(
-                color: AppColors.orange,
-                fontWeight: FontWeight.bold,
-                fontSize: 27),
-          ),
-        ]),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'CashMash ',
+                style: TextStyle(
+                    color: AppColors.darkBlue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 27),
+              ),
+              Text(
+                'Prime',
+                style: TextStyle(
+                    color: AppColors.orange,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 27),
+              ),
+            ]),
       ),
     );
   }

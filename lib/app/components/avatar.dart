@@ -6,11 +6,15 @@ class UserAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundImage: CachedNetworkImageProvider(
-        'https://pbs.twimg.com/profile_images/1502550846067814403/S4vd4uIH_400x400.jpg',
+    return Hero(
+      
+      tag: 'userprofile',
+      child: CircleAvatar(
+        backgroundImage: CachedNetworkImageProvider(
+          'https://pbs.twimg.com/profile_images/1502550846067814403/S4vd4uIH_400x400.jpg',
+        ),
+        radius: 50,
       ),
-      radius: 50,
     );
   }
 }

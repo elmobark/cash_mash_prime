@@ -1,6 +1,5 @@
 import 'package:cash_mash_prime/app/helpers/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 
 class BlueButton extends StatelessWidget {

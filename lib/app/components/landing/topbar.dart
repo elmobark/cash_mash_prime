@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cash_mash_prime/app/helpers/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:local_hero/local_hero.dart';
 
 class LandingTopBar extends StatelessWidget {
   const LandingTopBar({Key? key}) : super(key: key);
@@ -14,12 +15,19 @@ class LandingTopBar extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.centerLeft,
-            child: CircleAvatar(
-              backgroundImage: CachedNetworkImageProvider(
-                'https://pbs.twimg.com/profile_images/1502550846067814403/S4vd4uIH_400x400.jpg',
+            child: Hero(
+
+                  tag: 'userprofile',
+              child: LocalHero(
+                tag: 'userprofile',
+                child: CircleAvatar(
+                  backgroundImage: CachedNetworkImageProvider(
+                    'https://pbs.twimg.com/profile_images/1502550846067814403/S4vd4uIH_400x400.jpg',
+                  ),
+                  radius: 19,
+                  
+                ),
               ),
-              radius: 19,
-              
             ),
           ),
           Column(

@@ -6,6 +6,7 @@ import 'package:cash_mash_prime/app/helpers/app_decoration.dart';
 import 'package:cash_mash_prime/app/helpers/app_styles.dart';
 import 'package:cash_mash_prime/app/modules/auth/views/phone_view.dart';
 import 'package:cash_mash_prime/app/modules/auth/views/recovery_view.dart';
+import 'package:cash_mash_prime/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -60,6 +61,9 @@ class LockView extends GetView<AuthController> {
             padding: const EdgeInsets.all(8.0),
             child: Obx(() => TextFormField(
                   obscureText: controller.showPass.value,
+                  onFieldSubmitted: (v) {
+                    Get.offAndToNamed(Routes.HOME);
+                  },
                   decoration: AppDecorations.preLoginDecoration(
                     'Enter your password',
                     suffix: IconButton(
@@ -90,10 +94,22 @@ class LockView extends GetView<AuthController> {
       appBar: PrimeBar(),
       body: Column(
         children: [
-          Spacer(),
-          topPart(),
-          Spacer(),
-          bottomPart(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 58,
+                  ),
+                  topPart(),
+                  SizedBox(
+                    height: 58,
+                  ),
+                  bottomPart(),
+                ],
+              ),
+            ),
+          ),
           Container(
             color: AppColors.darkBlue,
             height: 20,
@@ -130,7 +146,7 @@ class LockView extends GetView<AuthController> {
       required String svg,
       required VoidCallback onPressed}) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(18.0),
       child: GestureDetector(
         onTap: onPressed,
         child: Row(

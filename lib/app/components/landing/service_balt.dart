@@ -1,7 +1,9 @@
 import 'package:cash_mash_prime/app/components/app_icon_button.dart';
 import 'package:cash_mash_prime/app/helpers/app_colors.dart';
+import 'package:cash_mash_prime/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class ServicBelt extends StatelessWidget {
   const ServicBelt({Key? key}) : super(key: key);
@@ -30,7 +32,9 @@ class ServicBelt extends StatelessWidget {
                     size: 42,
                   ),
                   padding: PrimeIconPadding.small,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Get.toNamed(Routes.PAYING);
+                  }),
             ),
             Padding(
               padding:
@@ -44,7 +48,9 @@ class ServicBelt extends StatelessWidget {
                     size: 42,
                   ),
                   padding: PrimeIconPadding.small,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Get.toNamed('Transferpage');
+                  }),
             ),
             Padding(
               padding:
@@ -58,7 +64,9 @@ class ServicBelt extends StatelessWidget {
                     height: 28,
                   ),
                   padding: PrimeIconPadding.medium,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Get.toNamed(Routes.SERVICES);
+                  }),
             ),
             Padding(
               padding:
@@ -72,7 +80,9 @@ class ServicBelt extends StatelessWidget {
                     height: 28,
                   ),
                   padding: PrimeIconPadding.medium,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Get.toNamed(Routes.ADDITIONALS);
+                  }),
             )
           ]),
         ),

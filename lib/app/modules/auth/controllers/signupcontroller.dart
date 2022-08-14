@@ -1,4 +1,4 @@
-import 'package:animations/animations.dart';
+
 import 'package:cash_mash_prime/app/modules/auth/views/signup/create_card.dart';
 import 'package:cash_mash_prime/app/modules/auth/views/signup/info.dart';
 import 'package:cash_mash_prime/app/modules/auth/views/signup/otp.dart';
@@ -23,6 +23,12 @@ class RouteSetup {
 }
 
 class SignUpController extends GetxController {
+  GlobalKey<FormState> phoneKey = GlobalKey<FormState>();
+
+  GlobalKey<FormState> infoKey = GlobalKey<FormState>();
+  Map<String,dynamic> signupData = {
+   
+  };
   RxMap<String, dynamic> cardInfo = <String, dynamic>{
     'number':'',
     'name':'',

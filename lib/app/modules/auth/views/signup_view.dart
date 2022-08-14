@@ -14,40 +14,42 @@ class SignupView extends GetView<SignUpController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.darkBlue,
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: IconButton(
-                      onPressed:  controller.handleBack,
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                      )),
-                ),
-                Column(
-                  children: [
-                    Text('Sign Up',
-                        style: AppStyles.h1.copyWith(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.normal)),
-                  ],
-                ),
-              ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                        onPressed: controller.handleBack,
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        )),
+                  ),
+                  Column(
+                    children: [
+                      Text('Sign Up',
+                          style: AppStyles.h1.copyWith(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.normal)),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Obx(() => SignUpStepper(steps: controller.steps.value)),
-          ),
-          Expanded(child: stack)
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Obx(() => SignUpStepper(steps: controller.steps.value)),
+            ),
+            Expanded(child: stack)
+          ],
+        ),
       ),
     );
   }
